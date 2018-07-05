@@ -1,8 +1,8 @@
 # Small test of WebAssembly with SDL2
 
-A ball is bouncing on the canvas walls while background music is played. A sound is played when the ball hits a wall. Exit by pressing Esc.
+A ball is bouncing on the canvas walls while background music is played. A sound is played when the ball hits a wall. Exit by closing the tab in the browser.
 
-This might be a good starting point if you want to create an SDL2 project for the web. It has just the basics. A minimal HTML-page with a HTML5 canvas which is accessed by SDL2 C-code.
+At the moment I disabled the background music because of some strange sound bug. The bounce sound effect kind of works but also sounds distorted.
 
 ## Requirements
 * [Emscripten SDK](https://webassembly.org/getting-started/developers-guide/)
@@ -10,6 +10,7 @@ This might be a good starting point if you want to create an SDL2 project for th
 
 ## Build
 * Checkout project: `git clone --recursive https://github.com/AlbertVeli/wasm_sdl2_test`
+* `cd wasm_sdl2_test`
 * `make`
 
 ## Test locally on port 8080
