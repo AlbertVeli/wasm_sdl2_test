@@ -1,8 +1,6 @@
 # Small test of WebAssembly with SDL2
 
-A ball is bouncing on the canvas walls while background music is played. A sound is played when the ball hits a wall. Exit by closing the tab in the browser.
-
-At the moment I disabled the background music because of some strange sound bug. The bounce sound effect kind of works but also sounds distorted.
+A ball is bouncing around the canvas while background music is played. A sound effect played when the ball hits a wall.
 
 ## Requirements
 * [Emscripten SDK](https://webassembly.org/getting-started/developers-guide/)
@@ -15,18 +13,23 @@ At the moment I disabled the background music because of some strange sound bug.
 
 ## Test locally on port 8080
 * `python -m SimpleHTTPServer 8080`
-* or `emrun --no_browser --port 8080 .`
+* or `emrun --no_browser --port 8080 .` (add --emrun to linker flags to run this way)
 * Visit http://localhost:8080/
 
 ## Resources
-* [Audio API](https://github.com/jakebesworth/Simple-SDL2-Audio) - Plays at most 1 music sample and 1 sound sample simultaneously, without SDL\_mixer.
+* [Audio API](https://www.libsdl.org/projects/SDL_mixer/release-1.2.html) - Emscripten only supports SDL_mixer 1. Can be used together with SDL2.
 *  https://github.com/timhutton/sdl-canvas-wasm - Even more minimal example than this
+
+## Notes
+* I only got file loading to work together with emscripten by adding --preload-file to CFLAGS. This in turn only works with the `_RW` versions of the load files. Like `Mix_LoadWAV_RW(SDL_RWFromFile("assets/bounce.ogg", "rb"), 1);`.
+* To preload all files in the assets directory `--preload-file assets` is added to CFLAGS (in Makefile).
+* Ogg vorbis support is added automatically to SDL_Mixer by adding `-s USE_OGG=1 -s USE_VORBIS=1` to CFLAGS.
 
 [//]: # (Discordian version of the MIT license)
 ## License
 
     ~~=) All Rights Reversed - No Rights Reserved (=~~
 
-Sweetmorn, the 40th day of Confusion in the YOLD 3184
+Boomtime, the 41st day of Confusion in the YOLD 3184
 
 Albert Veli

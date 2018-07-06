@@ -7,15 +7,18 @@
 ########################################################
 
 # Source files
-SRCS = ball.c init.c Simple-SDL2-Audio/src/audio.c
+SRCS = ball.c init.c audio.c
 
 OBJS = $(SRCS:%.c=%.o)
 
 CC = emcc
 WFLAGS := -W -Wall -O3
-CFLAGS := $(WFLAGS) -s WASM=1 -s USE_SDL=2 --preload-file assets
+CFLAGS := $(WFLAGS) -s WASM=1 -s USE_SDL=2
+# For background music
+CFLAGS += -s USE_OGG=1 -s USE_VORBIS=1
 # Uncomment line below if assets are large
 #CFLAGS += -s ALLOW_MEMORY_GROWTH=1
+CFLAGS += --preload-file assets
 
 # Check if emcc is in PATH
 EMCC_EXISTS := $(shell $(CC) --version 2> /dev/null)

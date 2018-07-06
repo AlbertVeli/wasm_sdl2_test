@@ -1,16 +1,11 @@
 #include "init.h"
-#include "Simple-SDL2-Audio/src/audio.h"
+#include "audio.h"
 
 #define WIDTH 640
 #define HEIGHT 480
 
 SDL_Rect ball;
 int dx, dy;
-
-void play_bounce(void)
-{
-   playSoundFromMemory(ctx.sfx, SDL_MIX_MAXVOLUME / 2);
-}
 
 void render(void)
 {
@@ -97,7 +92,7 @@ int main(void)
    dy = 2;
 
    /* Start playing background music */
-   //playMusicFromMemory(ctx.music, SDL_MIX_MAXVOLUME);
+   play_bgmusic();
 
    /* Run main_loop. -1 = let browser decide framerate. */
    emscripten_set_main_loop(main_loop, -1, 1);
