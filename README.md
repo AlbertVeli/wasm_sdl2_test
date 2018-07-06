@@ -19,13 +19,13 @@ Checkout the [Demo](https://albertveli.github.io/wasm_sdl2_test/).
 * Visit http://localhost:8080/
 
 ## Resources
-* [Audio API](https://www.libsdl.org/projects/SDL_mixer/release-1.2.html) - Emscripten only supports SDL_mixer 1. Can be used together with SDL2.
+* [Audio API](https://www.libsdl.org/projects/SDL_mixer/release-1.2.html) - Emscripten only supports SDL\_mixer 1. Can be used together with SDL2.
 *  https://github.com/timhutton/sdl-canvas-wasm - Even more minimal example than this
 
 ## Notes
 * I only got file loading to work together with emscripten by adding --preload-file to CFLAGS. This in turn only works with the `_RW` versions of the load files. Like `Mix_LoadWAV_RW(SDL_RWFromFile("assets/bounce.ogg", "rb"), 1);`.
 * To preload all files in the assets directory `--preload-file assets` is added to CFLAGS (in Makefile).
-* Ogg vorbis support is added automatically to SDL_Mixer by adding `-s USE_OGG=1 -s USE_VORBIS=1` to CFLAGS.
+* Ogg vorbis support is added automatically to SDL\_mixer by adding `-s USE_OGG=1 -s USE_VORBIS=1` to CFLAGS.
 
 [//]: # (Discordian version of the MIT license)
 ## License

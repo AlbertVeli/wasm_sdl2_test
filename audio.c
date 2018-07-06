@@ -1,3 +1,14 @@
+/************************************************************
+ *                                                        ***
+ *   ~~=) All Rights Reversed - No Rights Reserved (=~~   ***
+ *                                                        ***
+ *  Boomtime, the 41st day of Confusion in the YOLD 3184  ***
+ *                                                        ***
+ * Albert Veli                                            ***
+ ************************************************************/
+
+/* Audio API. Uses SDL_mixer. */
+
 #include "audio.h"
 
 typedef enum {

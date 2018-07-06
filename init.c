@@ -1,3 +1,14 @@
+/************************************************************
+ *                                                        ***
+ *   ~~=) All Rights Reversed - No Rights Reserved (=~~   ***
+ *                                                        ***
+ * Sweetmorn, the 40th day of Confusion in the YOLD 3184  ***
+ *                                                        ***
+ * Albert Veli                                            ***
+ ************************************************************/
+
+/* Initialization and cleanup routines. */
+
 #include <SDL2/SDL.h>
 #include "init.h"
 

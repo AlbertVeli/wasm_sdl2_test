@@ -1,3 +1,16 @@
+/************************************************************
+ *                                                        ***
+ *   ~~=) All Rights Reversed - No Rights Reserved (=~~   ***
+ *                                                        ***
+ * Sweetmorn, the 40th day of Confusion in the YOLD 3184  ***
+ *                                                        ***
+ * Albert Veli                                            ***
+ ************************************************************/
+
+/* Btw, here is the main functions for the project.
+ * The other files have helper functions that are called from here.
+ */
+
 #include "init.h"
 #include "audio.h"
 
@@ -7,6 +20,7 @@
 SDL_Rect ball;
 int dx, dy;
 
+/* Render each frame */
 void render(void)
 {
    SDL_Renderer *renderer = ctx.renderer;
@@ -21,6 +35,7 @@ void render(void)
    SDL_RenderPresent(renderer);
 }
 
+/* Called as fast as the browser wants, typically at 60 Hz */
 void main_loop(void)
 {
    SDL_Event event;
@@ -35,6 +50,7 @@ void main_loop(void)
          break;
 
       case SDL_KEYDOWN:
+         /* Use arrow keys to change ball speed */
          switch (event.key.keysym.sym) {
 
          case SDLK_UP:
@@ -87,7 +103,7 @@ int main(void)
    ball.x = WIDTH / 2 - ball.w / 2;
    ball.y = HEIGHT / 2 - ball.h / 2;
 
-   /* Initial speed */
+   /* Initial ball speed */
    dx = 1;
    dy = 2;
 
@@ -97,6 +113,10 @@ int main(void)
    /* Run main_loop. -1 = let browser decide framerate. */
    emscripten_set_main_loop(main_loop, -1, 1);
 
+   /* Free memory etc. This will never be called when using emscripten.
+    * Not sure what happens when user closes tab in web client.
+    * But when compiling as a native SDL2 program this would cleanup everything.
+    */
    cleanup();
 
    return 0;

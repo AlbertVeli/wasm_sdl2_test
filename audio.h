@@ -1,6 +1,15 @@
 #ifndef __AUDIO_H
 #define __AUDIO_H
 
+/************************************************************
+ *                                                        ***
+ *   ~~=) All Rights Reversed - No Rights Reserved (=~~   ***
+ *                                                        ***
+ *  Boomtime, the 41st day of Confusion in the YOLD 3184  ***
+ *                                                        ***
+ * Albert Veli                                            ***
+ ************************************************************/
+
 #include <emscripten.h>
 #include <SDL2/SDL.h>
 #include <SDL/SDL_mixer.h>

@@ -1,6 +1,15 @@
 #ifndef __INIT_H
 #define __INIT_H
 
+/************************************************************
+ *                                                        ***
+ *   ~~=) All Rights Reversed - No Rights Reserved (=~~   ***
+ *                                                        ***
+ * Sweetmorn, the 40th day of Confusion in the YOLD 3184  ***
+ *                                                        ***
+ * Albert Veli                                            ***
+ ************************************************************/
+
 #include <emscripten.h>
 #include <SDL2/SDL.h>
 #include "audio.h"
