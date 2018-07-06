@@ -2,6 +2,8 @@
 
 A ball is bouncing around the canvas while background music is played. A sound effect played when the ball hits a wall.
 
+Checkout the [Demo](https://albertveli.github.io/wasm_sdl2_test/).
+
 ## Requirements
 * [Emscripten SDK](https://webassembly.org/getting-started/developers-guide/)
 * git
